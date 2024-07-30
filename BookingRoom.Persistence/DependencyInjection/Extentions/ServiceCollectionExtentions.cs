@@ -19,7 +19,7 @@ namespace BookingRoom.Persistence.DependencyInjection.Extentions
                 buider
                 .EnableDetailedErrors(true)
                 .EnableSensitiveDataLogging(true)
-                .UseLazyLoadingProxies(true)
+                .UseLazyLoadingProxies(false) // Tạm thời để false
                 .UseSqlServer(
                     connectionString: configuration.GetConnectionString("SqlServerConnection"),
                     sqlServerOptionsAction: optionsBuider

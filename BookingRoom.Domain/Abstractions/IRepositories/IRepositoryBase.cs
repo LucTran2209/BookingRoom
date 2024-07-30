@@ -13,7 +13,7 @@
         /// Add a Entity to Database
         /// </summary>
         /// <param name="entity"></param>
-        void Add(TEntity entity);
+        void Insert(TEntity entity);
 
         /// <summary>
         /// Update data of Entity

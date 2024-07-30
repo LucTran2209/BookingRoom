@@ -1,3 +1,5 @@
+using BookingRoom.Application.Abstraction.ServiceInterface;
+using BookingRoom.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookingRoom.API.Controllers
@@ -12,10 +14,11 @@ namespace BookingRoom.API.Controllers
     };
 
         private readonly ILogger<WeatherForecastController> _logger;
-
-        public WeatherForecastController(ILogger<WeatherForecastController> logger)
+        private readonly IProductService _productService;
+        public WeatherForecastController(ILogger<WeatherForecastController> logger, IProductService productService)
         {
             _logger = logger;
+            _productService = productService;
         }
 
         [HttpGet(Name = "GetWeatherForecast")]
@@ -28,6 +31,20 @@ namespace BookingRoom.API.Controllers
                 Summary = Summaries[Random.Shared.Next(Summaries.Length)]
             })
             .ToArray();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> InsertProduct([FromBody] Product product)
+        {
+            try
+            {
+                return Ok(await _productService.InsertServiceAsync(product));
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
     }
 }

@@ -1,4 +1,6 @@
 
+using BookingRoom.Application.DependencyInjection.Extentions;
+using BookingRoom.Infastructure.DependencyInjection.Extentions;
 using BookingRoom.Persistence.DependencyInjection.Extentions;
 using BookingRoom.Persistence.DependencyInjection.Options;
 
@@ -21,6 +23,13 @@ namespace BookingRoom.API
             // # PERSISTENCE LAYER
             builder.Services.ConfigureSqlServerOptionsPersistence(builder.Configuration.GetSection(nameof(SqlServerRetryOptions)));
             builder.Services.AddSqlServerPersistence();
+
+            // # APPLICATION LAYER
+            builder.Services.AddAutoMapperProfiles();
+            builder.Services.AddDIService();
+
+            // # INFASTRUCTURE LAYER
+            builder.Services.AddServiceInfastructure(builder.Configuration);
 
             var app = builder.Build();
 

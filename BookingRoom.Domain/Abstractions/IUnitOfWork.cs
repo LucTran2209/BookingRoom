@@ -1,4 +1,5 @@
-﻿namespace BookingRoom.Domain.Abstractions
+﻿
+namespace BookingRoom.Domain.Abstractions
 {
     public interface IUnitOfWork : IAsyncDisposable
     {
@@ -7,6 +8,5 @@
         /// </summary>
         /// <returns></returns>
         Task SaveChangeAsync();
-
     }
 }
