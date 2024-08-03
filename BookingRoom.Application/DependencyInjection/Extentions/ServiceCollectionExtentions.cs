@@ -1,11 +1,6 @@
-﻿using BookingRoom.Application.Abstraction.ServiceInterface;
+﻿using BookingRoom.Application.Abstraction.ServiceInterfaces;
 using BookingRoom.Application.Services;
 using Microsoft.Extensions.DependencyInjection;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace BookingRoom.Application.DependencyInjection.Extentions
 {
@@ -20,6 +15,7 @@ namespace BookingRoom.Application.DependencyInjection.Extentions
         public static IServiceCollection AddDIService(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IRoleService, RoleService>();
             return services;
         }
     }

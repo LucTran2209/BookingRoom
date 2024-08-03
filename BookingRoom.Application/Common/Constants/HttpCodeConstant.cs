@@ -7,21 +7,21 @@ namespace BookingRoom.Application.Common.Constants
         /// <summary>
         /// HttpStatus Code Success
         /// </summary>
-        public const HttpStatusCode Success = HttpStatusCode.OK;
+        public const int Success = (int)HttpStatusCode.OK;
 
         /// <summary>
         /// HttpStatus Code BadRequest
         /// </summary>
-        public const HttpStatusCode BadRequest = HttpStatusCode.BadRequest;
+        public const int BadRequest = (int)HttpStatusCode.BadRequest;
 
         /// <summary>
         /// HttpStatus Code NotFound
         /// </summary>
-        public const HttpStatusCode NotFound = HttpStatusCode.NotFound;
+        public const int NotFound = (int)HttpStatusCode.NotFound;
 
         /// <summary>
         /// HttpStatus Code BadGateway
         /// </summary>
-        public const HttpStatusCode BadGateway = HttpStatusCode.BadGateway;
+        public const int BadGateway = (int)HttpStatusCode.BadGateway;
     }
 }

@@ -3,7 +3,7 @@ using BookingRoom.Infastructure.Abstraction;
 using BookingRoom.Persistence;
 using BookingRoom.Persistence.RepositoryInterface;
 
-namespace BookingRoom.Infastructure.Repository
+namespace BookingRoom.Infastructure.Repositories
 {
     public class ProductRepository : BaseRepository, IProductRepository
     {

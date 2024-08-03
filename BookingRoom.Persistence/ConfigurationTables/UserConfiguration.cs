@@ -18,10 +18,14 @@ namespace BookingRoom.Persistence.ConfigurationTables
             // Set Table Name
             builder.ToTable(TableNames.Users);
 
-            //Set Primary Key
+            // Set Primary Key
             builder.HasKey(x => x.Id);
 
-            //Set Property in table
+            // Set Foriegn Key
+            builder.HasOne(x => x.refreshToken)
+                   .WithOne(x => x.User);
+
+            // Set Property in table
             builder.Property(e => e.FirstName)
                   .IsRequired()
                   .HasMaxLength(100);
@@ -42,11 +46,11 @@ namespace BookingRoom.Persistence.ConfigurationTables
                   .IsRequired()
                   .HasMaxLength(50);
 
-            builder.Property(e => e.Password)
+            builder.Property(e => e.PasswordHash)
                   .IsRequired()
-                  .HasMaxLength(40);
+                  .HasMaxLength(int.MaxValue);
 
-            builder.Property(e => e.Dob)
+            builder.Property(e => e.DateOfBirth)
                   .IsRequired();           
         }
     }
