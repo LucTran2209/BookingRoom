@@ -10,7 +10,6 @@
 
         // Table Business
         internal const string Products = nameof(Products);
-        internal const string Categories = nameof(Categories);
 
     }
 }

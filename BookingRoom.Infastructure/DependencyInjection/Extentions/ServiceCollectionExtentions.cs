@@ -12,7 +12,7 @@ namespace BookingRoom.Infastructure.DependencyInjection.Extentions
         public static IServiceCollection AddServiceInfastructure(this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
 
