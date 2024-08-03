@@ -5,5 +5,6 @@ namespace BookingRoom.Persistence.RepositoryInterface
 {
     public interface IProductRepository : IRepositoryBase<Product, Guid>
     {
+
     }
 }

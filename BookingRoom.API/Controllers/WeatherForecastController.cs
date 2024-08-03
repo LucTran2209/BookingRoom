@@ -38,11 +38,11 @@ namespace BookingRoom.API.Controllers
         {
             try
             {
-                return Ok(await _productService.InsertServiceAsync(product));
+                var res = await _productService.InsertServiceAsync(product);
+                return StatusCode((int)res.StatusCode, res);
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
