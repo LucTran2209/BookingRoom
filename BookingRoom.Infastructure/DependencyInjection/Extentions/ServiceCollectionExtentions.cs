@@ -16,6 +16,8 @@ namespace BookingRoom.Infastructure.DependencyInjection.Extentions
 
             services.AddScoped<IProductRepository, ProductRepository>();
 
+            //Building demo
+            services.AddScoped<IBuildingRepository, BuildingRepository>();
 
             // Add Authentication
             //services.AddAuthentication(options =>

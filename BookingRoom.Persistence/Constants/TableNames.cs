@@ -12,5 +12,7 @@
         internal const string Products = nameof(Products);
         internal const string Categories = nameof(Categories);
 
+        //Building demo
+        internal const string Buildings = nameof(Buildings);
     }
 }

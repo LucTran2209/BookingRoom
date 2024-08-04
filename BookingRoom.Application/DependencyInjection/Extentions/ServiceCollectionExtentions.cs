@@ -20,6 +20,7 @@ namespace BookingRoom.Application.DependencyInjection.Extentions
         public static IServiceCollection AddDIService(this IServiceCollection services)
         {
             services.AddScoped<IProductService, ProductService>();
+            services.AddScoped<IBuildingService, BuildingService>();
             return services;
         }
     }

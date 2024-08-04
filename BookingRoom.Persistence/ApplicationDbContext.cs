@@ -16,5 +16,8 @@ namespace BookingRoom.Persistence
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRoles> UserRoles { get; set;}
         public DbSet<Category> Categories { get; set; }
+
+        //Building demo
+        public DbSet<Building> Buildings { get; set; }
     }
 }
