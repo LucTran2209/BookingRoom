@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace BookingRoom.Persistence.RepositoryInterface
 {
-    public interface IRoleRepository : IRepositoryBase<Role, Guid>
+    public interface IUserRepository : IRepositoryBase<User, Guid>
     {
         /// <summary>
-        /// Get Roles By User's Id
+        /// Find Entity by its Email
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        Task<IEnumerable<Role>> GetRolesByUserIdAsync(Guid id);
+        Task<User> FindByEmailAsync(string email);
     }
 }

@@ -18,11 +18,11 @@ namespace BookingRoom.API.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> InsertAsyncRole([FromBody] InsertServiceAsyncInputDto input)
+        public async Task<IActionResult> InsertAsyncRole([FromBody] InsertUpdateServiceAsyncInputDto input)
         {
             try
             {
-                var output = await _roleService.InsertServiceAsync(input);
+                var output = await _roleService.InsertUpdateServiceAsync(input);
                 return StatusCode(output.StatusCode, output);
             }
             catch (Exception)

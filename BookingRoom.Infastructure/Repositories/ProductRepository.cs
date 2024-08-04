@@ -11,11 +11,12 @@ namespace BookingRoom.Infastructure.Repositories
         {
         }
 
-        public void Insert(Product entity)
+        public bool Insert(Product entity)
         {
             try
             {
                 _dbContext.Products.Add(entity);
+                return true;
             }
             catch (Exception)
             {
@@ -23,7 +24,7 @@ namespace BookingRoom.Infastructure.Repositories
             }
         }
 
-        public void Delete(Product entity)
+        public bool Delete(Product entity)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +34,7 @@ namespace BookingRoom.Infastructure.Repositories
             throw new NotImplementedException();
         }
 
-        public void Update(Product entity)
+        public bool Update(Product entity)
         {
             throw new NotImplementedException();
         }

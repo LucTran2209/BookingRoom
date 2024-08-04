@@ -6,7 +6,7 @@ namespace BookingRoom.Application.Dtos.RoleServiceDto
     {
     }
 
-    public class InsertServiceAsyncInputDto
+    public class InsertUpdateServiceAsyncInputDto
     {
         public Guid Id { get; set; }
 

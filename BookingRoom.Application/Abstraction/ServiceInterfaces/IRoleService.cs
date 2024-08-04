@@ -7,10 +7,11 @@ namespace BookingRoom.Application.Abstraction.ServiceInterfaces
     public interface IRoleService
     {
         /// <summary>
-		/// Check is all entity' properies is valid -> insert
+		/// Insert or Update a Role
 		/// </summary>
 		/// <param name="entity">Entity to check </param>
 		/// <returns>Service result ( sucsess or failed with all details )</returns>
-		Task<ServiceResult> InsertServiceAsync(InsertServiceAsyncInputDto inputDto);
+		Task<ServiceResult> InsertUpdateServiceAsync(InsertUpdateServiceAsyncInputDto inputDto);
+		
     }
 }
