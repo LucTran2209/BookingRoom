@@ -24,6 +24,7 @@ namespace BookingRoom.Application.Services
         private readonly IRoleRepository _roleRepository;
         private readonly JwtConfig _jwtConfig;
         private readonly GoogleSettings _googleSettings;
+        private readonly AdminAccount _adminAccount;
 
         public AuthenService(IUnitOfWork unitOfWork, IMapper mapper,
                              IConfiguration configuration,
@@ -34,6 +35,7 @@ namespace BookingRoom.Application.Services
             _roleRepository = roleRepository;
             _jwtConfig = configuration.GetSection(nameof(JwtConfig)).Get<JwtConfig>() ?? new JwtConfig();
             _googleSettings = configuration.GetSection(nameof(GoogleSettings)).Get<GoogleSettings>() ?? new GoogleSettings();
+            _adminAccount = configuration.GetSection(nameof(AdminAccount)).Get<AdminAccount>() ?? new AdminAccount();
         }
 
         /// <summary>
@@ -80,11 +82,7 @@ namespace BookingRoom.Application.Services
             }
         }
 
-        public Task<ServiceResult> LoginAsync()
-        {
-            throw new NotImplementedException();
-        }
-
+        
         /// <summary>
         /// ExternalLoginByGoogleAccountAsync
         /// </summary>
@@ -134,6 +132,8 @@ namespace BookingRoom.Application.Services
 
                     bool IsSuccess = _userRepository.Insert(newUser);
                     if (IsSuccess) await _unitOfWork.SaveChangeAsync();
+                    //TODO: SendMail to New User
+
                     result.Data = await GenerateToken(newUser);
                     result.StatusCode = HttpCodeConstant.Success;
                 }
@@ -145,6 +145,42 @@ namespace BookingRoom.Application.Services
 
                 return result;
 
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+        }
+
+        /// <summary>
+        /// LoginByUsernamePasswordAsync
+        /// </summary>
+        /// <param name="inputDto"></param>
+        /// <returns></returns>
+        /// <exception cref="NotImplementedException"></exception>
+        public Task<ServiceResult> LoginByUsernamePasswordAsync(LoginByUsernamePasswordAsyncInputDto inputDto)
+        {
+            try
+            {
+                // Declarations Service Result
+                ServiceResult result = new ServiceResult()
+                {
+                    Data = null,
+                    StatusCode = HttpCodeConstant.Success,
+                    DevMsg = "",
+                    UserMsg = "",
+                };
+
+                // ToDo: CheckAccount Addmin In Database
+                bool IsAdminAccount = (_adminAccount.UserName == inputDto.UserName && _adminAccount.Password == inputDto.Password);
+
+                if (!IsAdminAccount)
+                {
+                   
+                }
+
+                throw new Exception();
             }
             catch (Exception)
             {
@@ -175,7 +211,6 @@ namespace BookingRoom.Application.Services
                 throw new Exception();
             }
         }
-
 
         /// <summary>
         /// Generate Token Contains User's Infomation
@@ -215,6 +250,11 @@ namespace BookingRoom.Application.Services
             return new JwtSecurityTokenHandler().WriteToken(token);
         }
 
+        /// <summary>
+        /// Generate Random String have limit in length
+        /// </summary>
+        /// <param name="length"></param>
+        /// <returns></returns>
         internal string GenerateRandomString(int length)
         {
             const string chars = HelperConstant.RandomString;
@@ -223,5 +263,6 @@ namespace BookingRoom.Application.Services
                 .Select(s => s[random.Next(s.Length)]).ToArray());
         }
 
+      
     }
 }

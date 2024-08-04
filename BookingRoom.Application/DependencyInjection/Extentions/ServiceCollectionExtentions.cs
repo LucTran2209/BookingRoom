@@ -22,6 +22,7 @@ namespace BookingRoom.Application.DependencyInjection.Extentions
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IRoleService, RoleService>();
             services.AddScoped<IAuthenService, AuthenService>();
+            services.AddScoped<ISendMailService, SendMailService>();
             return services;
         }
 

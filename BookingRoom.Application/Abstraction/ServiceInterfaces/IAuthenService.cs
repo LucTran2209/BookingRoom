@@ -9,26 +9,22 @@ namespace BookingRoom.Application.Abstraction.ServiceInterfaces
         /// <summary>
         /// Register a new account
         /// </summary>
+        /// <param name="inputDto"></param>
         /// <returns></returns>
         Task<ServiceResult> RegisterAsync(RegisterAsyncInputDto inputDto);
 
         /// <summary>
         /// Login by UserName and Password
         /// </summary>
+        /// <param name="inputDto"></param>
         /// <returns></returns>
-        Task<ServiceResult> LoginAsync();
+        Task<ServiceResult> LoginByUsernamePasswordAsync(LoginByUsernamePasswordAsyncInputDto inputDto);
 
         /// <summary>
         /// Using Google account to login
         /// </summary>
+        /// <param name="inputDto"></param>
         /// <returns></returns>
         Task<ServiceResult> ExternalLoginByGoogleAccountAsync(ExternalLoginByGoogleAccountAsyncInputDto inputDto);
-
-        ///// <summary>
-        ///// Veryfy token
-        ///// </summary>
-        ///// <param name="idToken"></param>
-        ///// <returns></returns>
-        //Task<GoogleJsonWebSignature.Payload> VerifyGoogleToken(string idToken);
     }
 }
