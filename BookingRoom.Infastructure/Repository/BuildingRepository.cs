@@ -40,5 +40,10 @@ namespace BookingRoom.Infastructure.Repository
         {
             throw new NotImplementedException();
         }
+
+        public Task<IEnumerable<Building>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

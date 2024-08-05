@@ -10,5 +10,6 @@ namespace BookingRoom.Persistence.RepositoryInterface
 {
     public interface IBuildingRepository : IRepositoryBase<Building, Guid>
     {
+        Task<IEnumerable<Building>> GetAllAsync();
     }
 }

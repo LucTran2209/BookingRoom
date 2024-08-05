@@ -30,6 +30,11 @@ namespace BookingRoom.Application.Services
             throw new NotImplementedException();
         }
 
+        public Task<IEnumerable<Product>> GetAllAsync()
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<ServiceResult> InsertServiceAsync(Product entity)
         {
             try

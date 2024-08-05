@@ -26,6 +26,11 @@ namespace BookingRoom.Application.Services
             throw new NotImplementedException();
         }
 
+        public async Task<IEnumerable<Building>> GetAllAsync()
+        {
+            return await _buildingRepository.GetAllAsync();
+        }
+
         public async Task<ServiceResult> InsertServiceAsync(Building entity)
         {
             try

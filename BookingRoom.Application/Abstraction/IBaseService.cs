@@ -45,5 +45,9 @@ namespace BookingRoom.Application.Abstraction
         ///  created by: LucTD
         ///  created at: 07/30/2024
         Task<ServiceResult> DeleteServiceAsync(Guid id);
+
+        //demo
+        Task<IEnumerable<TEntity>> GetAllAsync(); 
+
     }
 }
