@@ -14,5 +14,8 @@
 
         //Building demo
         internal const string Buildings = nameof(Buildings);
+
+        //Room demo
+        internal const string Rooms = nameof(Rooms);
     }
 }

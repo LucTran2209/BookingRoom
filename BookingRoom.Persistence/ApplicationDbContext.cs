@@ -19,5 +19,8 @@ namespace BookingRoom.Persistence
 
         //Building demo
         public DbSet<Building> Buildings { get; set; }
+
+        //Room deom
+        public DbSet<Room> Rooms { get; set; }
     }
 }

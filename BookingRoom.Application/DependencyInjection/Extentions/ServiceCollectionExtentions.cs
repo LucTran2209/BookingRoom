@@ -21,6 +21,7 @@ namespace BookingRoom.Application.DependencyInjection.Extentions
         {
             services.AddScoped<IProductService, ProductService>();
             services.AddScoped<IBuildingService, BuildingService>();
+            services.AddScoped<IRoomService, RoomService>();
             return services;
         }
     }

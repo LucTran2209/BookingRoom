@@ -11,5 +11,7 @@ namespace BookingRoom.Domain.Entities
     {
         public string? BuildingName { get; set; } = null;
         public string? Address { get; set; } = null;
+        
+        public ICollection<Room> Rooms { get; set; } = new List<Room>();
     }
 }
