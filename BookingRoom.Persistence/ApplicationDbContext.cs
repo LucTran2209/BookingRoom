@@ -10,16 +10,11 @@ namespace BookingRoom.Persistence
         protected override void OnModelCreating(ModelBuilder builder)
             => builder.ApplyConfigurationsFromAssembly(AssemblyReference.Assemply);
 
-        // Code template
-        public DbSet<Product> Products { get; set; }
 
-        // Authentiocation Table
+        public DbSet<Product> Products { get; set; }
         public DbSet<User> Users { get; set; }
         public DbSet<Role> Roles { get; set; }
         public DbSet<UserRoles> UserRoles { get; set;}
-        public DbSet<RefreshToken> RefreshTokens { get; set;}
-
-        // Business Table
-
+        public DbSet<Category> Categories { get; set; }
     }
 }

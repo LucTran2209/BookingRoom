@@ -7,7 +7,7 @@ namespace BookingRoom.Application.Common.Result
         /// <summary>
         /// api status Code
         /// </summary>
-        public int StatusCode { get; set; }
+        public HttpStatusCode? StatusCode { get; set; }
         /// <summary>
         /// Developer message
         /// </summary>

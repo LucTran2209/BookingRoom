@@ -24,8 +24,4 @@
     <ProjectReference Include="..\BookingRoom.Persistence\BookingRoom.Persistence.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Middleware\" />
-  </ItemGroup>
-
 </Project>

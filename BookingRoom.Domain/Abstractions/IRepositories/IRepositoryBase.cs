@@ -13,18 +13,18 @@
         /// Add a Entity to Database
         /// </summary>
         /// <param name="entity"></param>
-        bool Insert(TEntity entity);
+        void Insert(TEntity entity);
 
         /// <summary>
         /// Update data of Entity
         /// </summary>
         /// <param name="entity"></param>
-        bool Update(TEntity entity);
+        void Update(TEntity entity);
 
         /// <summary>
         /// Deactive a Entity
         /// </summary>
         /// <param name="entity"></param>
-        bool Delete(TEntity entity);
+        void Delete(TEntity entity);
     }
 }
