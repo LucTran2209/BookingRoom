@@ -7,10 +7,10 @@
         internal const string Users = nameof(Users);
         internal const string Roles = nameof(Roles);
         internal const string UserRoles = nameof(UserRoles);
+        internal const string RefreshTokens = nameof(RefreshTokens);
 
         // Table Business
         internal const string Products = nameof(Products);
-        internal const string Categories = nameof(Categories);
 
     }
 }

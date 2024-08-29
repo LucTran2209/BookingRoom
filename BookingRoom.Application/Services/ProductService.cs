@@ -1,5 +1,6 @@
-﻿using BookingRoom.Application.Abstraction;
-using BookingRoom.Application.Abstraction.ServiceInterface;
+﻿using AutoMapper;
+using BookingRoom.Application.Abstraction;
+using BookingRoom.Application.Abstraction.ServiceInterfaces;
 using BookingRoom.Application.Common.Constants;
 using BookingRoom.Application.Common.Result;
 using BookingRoom.Domain.Abstractions;
@@ -12,13 +13,11 @@ namespace BookingRoom.Application.Services
     {
         private readonly IProductRepository _productRepository;
 
-        public ProductService(IUnitOfWork unitOfWork,
-                              IProductRepository productRepository) : base(unitOfWork)
+        public ProductService(IUnitOfWork unitOfWork, IMapper mapper,
+                              IProductRepository productRepository) : base(unitOfWork, mapper)
         {
             _productRepository = productRepository;
         }
-
-
 
         public Task<ServiceResult> DeleteServiceAsync(Guid id)
         {

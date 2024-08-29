@@ -1,6 +1,6 @@
 ﻿using BookingRoom.Domain.Abstractions;
 using BookingRoom.Infastructure.Common;
-using BookingRoom.Infastructure.Repository;
+using BookingRoom.Infastructure.Repositories;
 using BookingRoom.Persistence.RepositoryInterface;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -12,10 +12,11 @@ namespace BookingRoom.Infastructure.DependencyInjection.Extentions
         public static IServiceCollection AddServiceInfastructure(this IServiceCollection services, IConfiguration configuration)
         {
 
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddTransient<IUnitOfWork, UnitOfWork>();
 
             services.AddScoped<IProductRepository, ProductRepository>();
-
+            services.AddScoped<IRoleRepository, RoleRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             // Add Authentication
             //services.AddAuthentication(options =>

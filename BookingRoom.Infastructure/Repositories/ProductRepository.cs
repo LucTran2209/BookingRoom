@@ -3,7 +3,7 @@ using BookingRoom.Infastructure.Abstraction;
 using BookingRoom.Persistence;
 using BookingRoom.Persistence.RepositoryInterface;
 
-namespace BookingRoom.Infastructure.Repository
+namespace BookingRoom.Infastructure.Repositories
 {
     public class ProductRepository : BaseRepository, IProductRepository
     {
@@ -11,11 +11,12 @@ namespace BookingRoom.Infastructure.Repository
         {
         }
 
-        public void Insert(Product entity)
+        public bool Insert(Product entity)
         {
             try
             {
                 _dbContext.Products.Add(entity);
+                return true;
             }
             catch (Exception)
             {
@@ -23,7 +24,7 @@ namespace BookingRoom.Infastructure.Repository
             }
         }
 
-        public void Delete(Product entity)
+        public bool Delete(Product entity)
         {
             throw new NotImplementedException();
         }
@@ -33,7 +34,7 @@ namespace BookingRoom.Infastructure.Repository
             throw new NotImplementedException();
         }
 
-        public void Update(Product entity)
+        public bool Update(Product entity)
         {
             throw new NotImplementedException();
         }
